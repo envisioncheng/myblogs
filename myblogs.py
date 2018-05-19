@@ -4,7 +4,8 @@ from models import *
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL") 
+#remove
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL","postgresql://postgres:test2018@localhost/lecture3") 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 
@@ -22,7 +23,7 @@ def show_user_profile(username):
 def goo(username):
     return 'I love you {}'.format(username)
 
-@app.route('/e/')
+@app.route('/education/')
 def education():
     flights=Flight.query.all()
     return render_template("flights.html",flights=flights)
