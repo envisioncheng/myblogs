@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>飞机清单</title>
+</head>
+<body>
+    <h1>从云服务器取出数据，腾迅云</h1>
+    <h2>技术栈</h2>
+    <h3>python</h3>
+    <h3>javascriptES6</h3>
+    <h3>html5</h3>
+    <H3>CSS3</H3>
+    <h3>database:postgresql</h3>
+    <h3>ORM</h3>
+    <h3>git</h3>
+
+    <h3>github coding in here</h3>
+    <h3>visual studio code it is my tool </h3>
+    
+    <br/>
+
+    <h1>
+        从数据库读取数据
+    </h1>
+    <ul>
+            {% for flight in flights %}
+            <li>
+                {{flight.id}} --{{flight.origin}}-- {{flight.destination}}
+            </li>
+            {% endfor %}
+    </ul>
+
+</body>
+</html>
+</html>

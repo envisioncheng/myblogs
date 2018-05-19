@@ -1,7 +1,13 @@
 #-*- coding=utf-8 -*-
-from flask import Flask
+from flask import Flask,render_template,request
+
+from models import *
 
 app = Flask(__name__)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL") 
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db.init_app(app)
 
 @app.route('/')
 def hello_world():
@@ -16,6 +22,11 @@ def show_user_profile(username):
 @app.route('/520/<username>')
 def goo(username):
     return 'I love you {}'.format(username)
+
+@app.route('/education/')
+def education():
+    flights=Flight.query.all()
+    return render_template("flights.html",flights=flights)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
