@@ -1,6 +1,7 @@
 #-*- coding=utf-8 -*-
-from flask import Flask,render_template,request
+import os
 
+from flask import Flask,render_template,request
 from models import *
 
 app = Flask(__name__)
