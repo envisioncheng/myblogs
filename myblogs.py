@@ -1,7 +1,5 @@
 #-*- coding=utf-8 -*-
-import os
-
-from flask import Flask,render_template,request
+from flask import render_template,request
 from models import *
 
 app = Flask(__name__)
@@ -24,7 +22,7 @@ def show_user_profile(username):
 def goo(username):
     return 'I love you {}'.format(username)
 
-@app.route('/education/')
+@app.route('/e/')
 def education():
     flights=Flight.query.all()
     return render_template("flights.html",flights=flights)
